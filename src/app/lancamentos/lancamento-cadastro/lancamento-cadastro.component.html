@@ -19,8 +19,8 @@
           #vencimento="ngModel"
           required
         ></p-calendar>
-        <!--<app-message [control]="vencimento" error="required"
-          text="Informe a data de vencimento"></app-message>-->
+        <app-message [control]="vencimento" error="required"
+          text="Informe a data de vencimento"></app-message>
       </div>
       <div class="ui-g-6 ui-md-3 ui-fluid">
         <label>{{ tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento' }}</label>
@@ -41,10 +41,10 @@
           minlength="5"
         >
 
-        <!--<app-message [control]="descricao" error="required"
-          text="Informe uma Descrição"></app-message>-->
-        <!--<app-message [control]="descricao" error="minlength"
-          text="Minimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres"></app-message>-->
+        <app-message [control]="descricao" error="required"
+          text="Informe uma Descrição"></app-message>
+        <app-message [control]="descricao" error="minlength"
+          text="Minimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres"></app-message>
 
       </div>
       <div class="ui-g-12 ui-md-3 ui-fluid">

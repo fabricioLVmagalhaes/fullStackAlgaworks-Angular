@@ -11,6 +11,7 @@ import { TooltipModule } from 'primeng/components/tooltip/tooltip';
 import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
+import { SharedModule } from 'app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
     TooltipModule,
     SelectButtonModule,
     DropdownModule,
-    InputMaskModule
+    InputMaskModule,
+    SharedModule
   ],
   declarations: [
     PessoaCadastroComponent,
