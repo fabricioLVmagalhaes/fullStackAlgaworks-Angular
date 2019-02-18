@@ -1,7 +1,6 @@
 import { SharedModule } from './../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
-import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -32,7 +31,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
   ],
   declarations: [
     LancamentoCadastroComponent,
-    LancamentosGridComponent,
     LancamentosPesquisaComponent
   ],
   exports: [
