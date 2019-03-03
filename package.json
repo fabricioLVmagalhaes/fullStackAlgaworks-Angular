@@ -24,6 +24,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "install": "^0.12.2",
+    "moment": "^2.24.0",
     "ng": "0.0.0",
     "ng2-currency-mask": "^5.3.1",
     "primeng": "^4.1.0",
