@@ -42,9 +42,9 @@
       [lazy]="true"
       [totalRecords]="totalRegistros"
       (onLazyLoad)="aoMudarPagina($event)"
+      #tabela
       [responsive]="true"
       emptyMessage="Nenhum Lançamento Encontrado"
-
     >
       <p-column field="pessoa" header="Pessoa"></p-column>
       <p-column field="descricao" header="Descrição"></p-column>
@@ -63,10 +63,17 @@
           <span [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{lanc.valor | currency:'BRL':true :'1.2-2' }}</span>
         </ng-template>
       </p-column>
+
       <p-column styleClass="col-acoes">
-        <ng-template pTemplate="body">
+        <ng-template let-lanc="rowData" pTemplate="body">
           <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top"></a>
-          <button pButton icon="fa-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+          <button
+            pButton
+            icon="fa-trash"
+            pTooltip="Excluir"
+            tooltipPosition="top"
+            (click)="excluir(lanc)"
+          ></button>
         </ng-template>
       </p-column>
     </p-dataTable>
