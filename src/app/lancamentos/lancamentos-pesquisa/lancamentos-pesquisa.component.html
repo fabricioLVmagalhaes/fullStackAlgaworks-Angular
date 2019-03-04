@@ -35,7 +35,17 @@
   <div class="ui-g">
 
 <div class="ui-g-12">
-    <p-dataTable [value]="lancamentos" [paginator]="true" [rows]="5" [responsive]="true" emptyMessage="Nenhum Lançamento Encontrado">
+    <p-dataTable
+      [value]="lancamentos"
+      [paginator]="true"
+      [rows]="filtro.itensPorPagina"
+      [lazy]="true"
+      [totalRecords]="totalRegistros"
+      (onLazyLoad)="aoMudarPagina($event)"
+      [responsive]="true"
+      emptyMessage="Nenhum Lançamento Encontrado"
+
+    >
       <p-column field="pessoa" header="Pessoa"></p-column>
       <p-column field="descricao" header="Descrição"></p-column>
       <p-column field="dataVencimento" header="Data de Vencimento" styleClass="col-data">
