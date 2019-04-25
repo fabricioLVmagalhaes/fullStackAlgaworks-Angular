@@ -9,6 +9,7 @@ export class PessoaFiltro {
 
 @Injectable()
 export class PessoaService {
+  
 
   pessoaUrl = 'http://localhost:8080/pessoas';
 
@@ -56,6 +57,15 @@ export class PessoaService {
           return resultado.content;
         }
       )
+  }
+
+  excluir(codigo: number): Promise<void> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.delete(`${this.pessoaUrl}/${codigo}`, {headers})
+      .toPromise()
+      .then(() => null);
   }
 
 }
