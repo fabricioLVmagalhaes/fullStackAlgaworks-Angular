@@ -71,7 +71,7 @@ export class PessoasPesquisaComponent {
       .then(
         () => {
           let alteracao = !pessoa.ativo ? 'ativada' : 'desativada';
-          this.toasty.success('Pessoa ' + alteracao + ' com sucesso!')
+          this.toasty.success(`Pessoa ${alteracao} com sucesso!`)
           this.pesquisar();
         }
       )
