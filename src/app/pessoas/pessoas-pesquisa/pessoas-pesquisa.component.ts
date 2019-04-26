@@ -1,9 +1,8 @@
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 import { ToastyService } from 'ng2-toasty';
 import { LazyLoadEvent } from 'primeng/components/common/lazyloadevent';
-import { PessoaService } from './../pessoa.service';
+import { PessoaService, PessoaFiltro } from './../pessoa.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PessoaFiltro } from '../pessoa.service';
 import { ErrorHandlerService } from 'app/core/error-handler.service';
 import { AbstractFormGroupDirective } from '@angular/forms';
 
@@ -64,6 +63,18 @@ export class PessoasPesquisaComponent {
         this.toasty.success('Pessoa Excluida com Sucesso!');
         
       })
+      .catch(error => this.errorHandler.handle(error));
+  }
+
+  alternarStatus(pessoa : any){
+    this.pessoaService.alterarStatus(!pessoa.ativo, pessoa.codigo)
+      .then(
+        () => {
+          let alteracao = !pessoa.ativo ? 'ativada' : 'desativada';
+          this.toasty.success('Pessoa ' + alteracao + ' com sucesso!')
+          this.pesquisar();
+        }
+      )
       .catch(error => this.errorHandler.handle(error));
   }
 }

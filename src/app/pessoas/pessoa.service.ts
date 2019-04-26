@@ -68,4 +68,18 @@ export class PessoaService {
       .then(() => null);
   }
 
+  alterarStatus(obj : boolean, codigo: string): Promise<void> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+    headers.append('Content-Type', 'application/json')
+
+    return this.http.put(
+      `${this.pessoaUrl}/${codigo}/ativo`,
+        obj, {headers}
+       
+    )
+    .toPromise()
+    .then(() => null);
+  }
+
 }
