@@ -1,9 +1,9 @@
 export class Pessoa {
-
+    codigo: number
 }
 
 export class Categoria {
-
+    codigo: number
 
 }
 

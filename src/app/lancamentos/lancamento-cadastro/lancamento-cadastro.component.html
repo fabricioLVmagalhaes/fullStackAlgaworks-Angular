@@ -72,7 +72,7 @@
           [autoWidth]="false"
           placeholder="selecione"
           name="categoria"
-          [(ngModel)]="lancamento.categoria"
+          [(ngModel)]="lancamento.categoria.codigo"
           required
         ></p-dropdown>
       </div>
@@ -84,7 +84,7 @@
           placeholder="selecione"
           [filter]="true"
           name="pessoa"
-          [(ngModel)]="lancamento.pessoa"
+          [(ngModel)]="lancamento.pessoa.codigo"
           required
         ></p-dropdown>
       </div>
