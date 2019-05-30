@@ -14,9 +14,7 @@ export class CategoriasService {
 
     return this.http.get(`${this.categoriasUrl}`, {headers})
       .toPromise()
-      .then(response => (response.json()));
-        
-      
+      .then(response => (response.json()));      
   }
 
 }
