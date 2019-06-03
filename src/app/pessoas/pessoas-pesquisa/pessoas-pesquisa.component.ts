@@ -72,7 +72,11 @@ export class PessoasPesquisaComponent {
         () => {
           let alteracao = !pessoa.ativo ? 'ativada' : 'desativada';
           this.toasty.success(`Pessoa ${alteracao} com sucesso!`)
-          this.pesquisar();
+          if(this.grid.first===0){
+            this.pesquisar();
+          } else {
+            this.grid.first = 0;
+          }
         }
       )
       .catch(error => this.errorHandler.handle(error));

@@ -1,5 +1,5 @@
 <div class="container">
-  <form #f="ngForm" autocomplete="off">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g">
       <div class="ui-g-12">
         <h1>Nova Pessoa</h1>
@@ -11,7 +11,7 @@
           type="text"
           pInputText
           name="nome"
-          ngModel
+          [(ngModel)]="pessoa.nome"
           #nome="ngModel"
           required
           minlength="5"
@@ -29,7 +29,7 @@
           type="text"
           pInputText
           name="logradouro"
-          ngModel
+          [(ngModel)]="pessoa.endereco.logradouro"
           #logradouro="ngModel"
           required
           minlength="3"
@@ -47,7 +47,7 @@
           type="text"
           pInputText
           name="numero"
-          ngModel
+          [(ngModel)]="pessoa.endereco.numero"
           #numero="ngModel"
           required
         >
@@ -58,7 +58,12 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Complemento</label>
-        <input type="text" pInputText>
+        <input 
+          type="text" 
+          pInputText
+          name="complemento"
+          [(ngModel)]="pessoa.endereco.complemento"
+        >
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
@@ -67,7 +72,7 @@
           type="text"
           pInputText
           name="bairro"
-          ngModel
+          [(ngModel)]="pessoa.endereco.bairro"
           #bairro="ngModel"
           required
           minlength="2"
@@ -83,7 +88,7 @@
         <p-inputMask
            mask="99.999-999"
            name="cep"
-           ngModel
+           [(ngModel)]="pessoa.endereco.cep"
            #cep="ngModel"
            required
           ></p-inputMask>
@@ -97,7 +102,7 @@
           type="text"
           pInputText
           name="cidade"
-          ngModel
+          [(ngModel)]="pessoa.endereco.cidade"
           #cidade="ngModel"
           required
           minlength="2"
@@ -114,7 +119,7 @@
           type="text"
           pInputText
           name="estado"
-          ngModel
+          [(ngModel)]="pessoa.endereco.estado"
           #estado="ngModel"
           required
           minlength="2"
